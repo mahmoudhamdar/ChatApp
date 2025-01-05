@@ -1,0 +1,6 @@
+﻿services:
+  charapp:
+    image: charapp
+    build:
+      context: .
+      dockerfile: CharApp/Dockerfile

@@ -1,15 +1,16 @@
-import  {Messages} from "../Messages/Messages.tsx";
+import {ChatWindow} from "../ChatWIndow/ChatWindow.tsx";
 
 
-export const ChatRoom = ({roomName,roomId}: { roomName: string; roomId: string; }) =>{
+export const ChatRoom = ({roomName, roomId}: { roomName: string; roomId: string; }) => {
     return (
         <div>
             <p>{roomName}</p>
-            <Messages roomId={roomId} />
-            
+            <ChatWindow roomId={roomId} roomName={roomName}/>
+
+
         </div>
     )
-   }
+}
 
 
 

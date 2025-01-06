@@ -532,3 +532,4 @@ C:\Users\abbas\Desktop\ChatApp-main\CharApp\obj\Debug\net8.0\ref\CharApp.dll
 C:\Users\abbas\Desktop\ChatApp-main\CharApp\bin\Debug\net8.0\CharApp.staticwebassets.endpoints.json
 C:\Users\abbas\Desktop\ChatApp-main\CharApp\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 C:\Users\abbas\Desktop\ChatApp-main\CharApp\obj\Debug\net8.0\staticwebassets\msbuild.CharApp.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
+C:\Users\abbas\Desktop\ChatApp-main\CharApp\obj\Debug\net8.0\CharApp.sourcelink.json

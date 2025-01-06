@@ -1,35 +1,36 @@
+import {useEffect, useState} from 'react';
 
-    import  {useEffect, useState} from 'react';
-    import {URL} from "../../Utils/URL.ts";
-    import axios from "axios";
-    import {ChatRoom} from "./ChatRoom.tsx";
+import {ChatRoom} from "./ChatRoom.tsx";
+import {GetAllChatrooms} from "../../Services/ApiService.tsx";
 
-    type ChatRoom = {
-        roomName: string;
-        roomId: string;
-    }
-    export const ChatRooms = () => {
+type ChatRoom = {
+    roomName: string;
+    roomId: string;
+}
+export const ChatRooms = () => {
 
-        const [chatRooms, setChatRooms] = useState<ChatRoom[]>([]);
-        useEffect(() => {
-            
-            axios.get(`${URL}/api/ChatRoomApi/`).then((response) => {
-                console.log(response.data);
-                setChatRooms(response.data)})
-               
-        },[])
-    
-        return (
-            
-            <div>
-                {chatRooms.map((chatroom)=>{
-                  return <ChatRoom  roomName={chatroom.roomName} key={chatroom.roomId} roomId={chatroom.roomId} />
-                })}
-                
-            </div>        
-            
-        )
-    
-    
-    }
+    const [chatRooms, setChatRooms] = useState<ChatRoom[]>([]);
+    useEffect(() => {
+
+        GetAllChatrooms().then((response) => {
+
+            // @ts-ignore
+            setChatRooms(response.data)
+        })
+
+    }, [])
+
+    return (
+
+        <div>
+            {chatRooms.map((chatroom) => {
+                return <ChatRoom roomName={chatroom.roomName} key={chatroom.roomId} roomId={chatroom.roomId}/>
+            })}
+
+        </div>
+
+    )
+
+
+}
 

@@ -1,16 +1,15 @@
 import axios from "axios";
 import React, {useContext} from "react";
+import {userIdContext} from "../Contexts/userIdContext.tsx";
 
-import {userContext} from "../../App.tsx";
 
-export interface userContext {
-   userId: string;
-    
-}
+
+
 export const MessageInput=()=> {
 
     
-    const [userId]:string = useContext(userContext);
+   
+    const userId = useContext(userIdContext)?.userId;
     const sendMessage = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         
         axios.post(`${URL}/api/MessageApi/`, {

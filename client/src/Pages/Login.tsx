@@ -6,7 +6,9 @@ import {URL} from "../Utils/URL.js";
 import * as yup from "yup";
 import {yupResolver} from "@hookform/resolvers/yup";
 import {useNavigate} from "react-router-dom";
-import {createContext, useState} from "react";
+
+import {userIdContext} from "../Components/Contexts/userIdContext.tsx";
+import {useContext} from "react";
 
 
 type Values ={
@@ -18,8 +20,8 @@ type Values ={
 export const Login = () => {
     const navigate = useNavigate();
     
-    const userContext = createContext<any>(undefined);
-    const [userId, setUserId] = useState<string>();   
+   
+    const context = useContext(userIdContext) ;   
     
     const schema = yup.object().shape({
         username: yup.string().required(),
@@ -34,7 +36,7 @@ export const Login = () => {
         console.log(values);
         axios.post(`${URL}/api/UserApi/login`, values).then(r => {
             console.log(r.data);
-            setUserId(r.data.userId);
+            context?.setUserId(r.data.userId);
         });
         
         navigate("/account");
@@ -42,7 +44,7 @@ export const Login = () => {
 
     return (
         <div>
-            <userContext.Provider value={[userId, setUserId]}>
+           
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <label>Username</label>
                     <input {...register("username")} />
@@ -52,7 +54,7 @@ export const Login = () => {
                     {errors.password && <p>{errors.password?.message}</p>}
                     <button type="submit">Login</button>
                 </form>
-            </userContext.Provider>
+           
         </div>
     );
 }

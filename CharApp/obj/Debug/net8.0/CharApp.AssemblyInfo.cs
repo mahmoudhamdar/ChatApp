@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CharApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9f6318c2a230f7dca74a8646f8a62b1c08d693a4")]
 [assembly: System.Reflection.AssemblyProductAttribute("CharApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CharApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
